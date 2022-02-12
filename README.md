@@ -44,9 +44,14 @@ $ docker-compose -f docker-compose-CeleryExecutor.yml ps
 
 The above screen shows it’s running six containers:
 
-Webserver – The Airflow UI, can be accessed at localhost:8080
-Redis – This is required by our worker and Scheduler to queue tasks and execute them
-Worker – This is the Celery worker, which keeps on polling on the Redis process for any incoming tasks; then processes them, and updates the status in Scheduler
-Flower – The UI for all running Celery workers and its threads
+Webserver – The Airflow UI, can be accessed at localhost:8080.
+
+Redis – This is required by our worker and Scheduler to queue tasks and execute them.
+
+Worker – This is the Celery worker, which keeps on polling on the Redis process for any incoming tasks; then processes them, and updates the status in Scheduler.
+
+Flower – The UI for all running Celery workers and its threads.
+
 Scheduler – Airflow Scheduler, which queues tasks on Redis, that are picked and processed by Celery workers.
+
 Postgres – The database is shared by all Airflow processes to record and display DAGs’ state and other information.
