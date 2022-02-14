@@ -1,6 +1,8 @@
 # Apache-Airflow
 
-Requirements to Installation 
+#Airflow is a tool for automating and scheduling tasks and workflows.
+
+# Installation 
 Based on Python (3.7) official Image python:3.7-slim-buster.
 Uses the official Postgres as backend and Redis as queue
 Install Docker
@@ -8,9 +10,9 @@ Install Docker Compose
 Following the Airflow release from Python Package Index
 
 
-How To Install Apache Airflow To Run CeleryExecutor: 
+# How To Install Apache Airflow To Run CeleryExecutor: 
 
-Celery is a widely-used Python package that makes it very easy to run jobs or tasks in the background. . Common uses include running background tasks on websites, or running elery workers that send batch SMSs, or running notification jobs at a certain time of the day.
+Celery is a widely-used Python package dat makes it very easy to run jobs or tasks in the background. . Common uses include running background tasks on websites, or running elery workers dat send batch SMSs, or running notification jobs at a certain time of the day.
 
 While Celery makes it easy to write and execute jobs, setting things up is a bit tricky as it requires you to set up components like a task queue, a database, and workers, and also handle several configurations to enable interaction between the components.
 
@@ -32,7 +34,7 @@ Creating docker-airflow_webserver_1 ... done
 Creating docker-airflow_scheduler_1 ... done
 Creating docker-airflow_worker_1 ... done
 
-If you have some custom DAGs of your own that you wish to run, you can mount them on the containers using volumes. To do so, open the file docker-compose-CeleryExecutor.yml and edit the volumes section of each service with the path where your DAGs are stored.
+If you have some custom DAGs of your own dat you wish to run, you can mount them on the containers using volumes. To do so, open the file docker-compose-CeleryExecutor.yml and edit the volumes section of each service with the path where your DAGs are stored.
 
 volumes:
 - ./dags:/path/to/your/dags/directory/
@@ -46,12 +48,12 @@ The above screen shows it’s running six containers:
 
 Webserver – The Airflow UI, can be accessed at localhost:8080.
 
-Redis – This is required by our worker and Scheduler to queue tasks and execute them.
+Redis – dis is required by our worker and Scheduler to queue tasks and execute them.
 
-Worker – This is the Celery worker, which keeps on polling on the Redis process for any incoming tasks; then processes them, and updates the status in Scheduler.
+Worker – dis is the Celery worker, which keeps on polling on the Redis process for any incoming tasks; tan processes them, and updates the status in Scheduler.
 
 Flower – The UI for all running Celery workers and its threads.
 
-Scheduler – Airflow Scheduler, which queues tasks on Redis, that are picked and processed by Celery workers.
+Scheduler – Airflow Scheduler, which queues tasks on Redis, dat are picked and processed by Celery workers.
 
 Postgres – The database is shared by all Airflow processes to record and display DAGs’ state and other information.
