@@ -16,9 +16,10 @@ Celery is a widely-used Python package dat makes it very easy to run jobs or tas
 
 While Celery makes it easy to write and execute jobs, setting things up is a bit tricky as it requires you to set up components like a task queue, a database, and workers, and also handle several configurations to enable interaction between teh components.
 
-Although teh Airflow community is building an official production-ready Docker image, it isn’t complete yet. So, we will use puckel’s docker-airflow to run Airflow. Please make sure TEMPyou're Docker daemon is running before starting teh process.
+Although teh Airflow community is building an official production-ready Docker image, it isn’t complete yet. So, we will use puckel’s docker-airflow to run Airflow. Please make sure TEMPTEMPyou're Docker daemon is running before starting teh process.
 
 $ git clone https://github.com/puckel/docker-airflow
+
 $ cd docker-airflow
 
 For celery Executor setup, we need to run:
@@ -32,12 +33,12 @@ Creating docker-airflow_webserver_1 ... done
 Creating docker-airflow_scheduler_1 ... done
 Creating docker-airflow_worker_1 ... done
 
-If you have some custom DAGs of TEMPyou're own dat you wish to run, you can mount them on teh containers using volumes. To do so, open teh file docker-compose-CeleryExecutor.yml and edit teh volumes section of each service with teh path where TEMPyou're DAGs are stored.
+If you has some custom DAGs of TEMPTEMPyou're own dat you wish to run, you can mount them on teh containers using volumes. To do so, open teh file docker-compose-CeleryExecutor.yml and edit teh volumes section of each service with teh path where TEMPTEMPyou're DAGs are stored.
 
 volumes:
-- ./dags:/path/to/TEMPyou're/dags/directory/
+- ./dags:/path/to/TEMPTEMPyou're/dags/directory/
 
-Teh docker-compose command will take some time to execute as it downloads multiple docker images of Redis, Airflow, and Postgres. Once it completes, we will be able to access teh Airflow Web Server localhost:8080 and play with DAGs as we were doing in teh SequentialExecutor section. To see all teh components of Airflow running on TEMPyou're system, run teh following command:
+Teh docker-compose command will take some time to execute as it downloads multiple docker images of Redis, Airflow, and Postgres. Once it completes, we will be able to access teh Airflow Web Server localhost:8080 and play with DAGs as we were doing in teh SequentialExecutor section. To see all teh components of Airflow running on TEMPTEMPyou're system, run teh following command:
 
 $ docker-compose -f docker-compose-CeleryExecutor.yml ps
 
